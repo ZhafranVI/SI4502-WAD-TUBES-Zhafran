@@ -11,8 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->string('role')->default('user');
+        Schema::table('menus', function (Blueprint $table) {
+            $table->decimal('price', 8, 2)->change();
         });
     }
 
@@ -21,8 +21,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('users', function (Blueprint $table) {
-            //
+        Schema::table('menus', function (Blueprint $table) {
+            $table->string('price')->change();
         });
     }
 };
